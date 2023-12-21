@@ -162,7 +162,7 @@ CREATE TABLE NGUOIDUNG
 (
         TEN VARCHAR(50) NOT NULL,
         MATKHAU VARCHAR(30),
-        QUYEN INT, -- 1: QUảN Lý, 2: THủ THư
+        --QUYEN INT, -- 1: QUảN Lý, 2: THủ THư
         CONSTRAINT PK_TEN PRIMARY KEY(TEN)
 );
 
@@ -181,10 +181,10 @@ VALUES
     (N'Cuốn sách J', N'Tác giả J', 'NXB J', 2020, 158, N'Kệ 10', 140, 18);
 select * from DAUSACH
 -- Chèn dữ liệu vào bảng NGUOIDUNG
-insert into NGUOIDUNG values ('hai','hai',1);
-insert into NGUOIDUNG values ('long','long',1);
-insert into NGUOIDUNG values ('minh','minh',1);
-insert into NGUOIDUNG values ('thuthu','thuthu',2);
+insert into NGUOIDUNG values ('hai','hai');
+insert into NGUOIDUNG values ('long','long');
+insert into NGUOIDUNG values ('minh','minh');
+insert into NGUOIDUNG values ('thuthu','thuthu');
 select* from NGUOIDUNG
 -- Chèn dữ liệu vào bảng DOCGIA
 INSERT INTO DOCGIA (HOTEN, NGAYSINH, LOAIDG, DIACHI, EMAIL, NGLAPTHE, NGDENHAN, TIENNO)
