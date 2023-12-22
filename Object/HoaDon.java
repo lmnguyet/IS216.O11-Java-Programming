@@ -18,14 +18,16 @@ public class HoaDon  {
    private int mAHOADON;
    private int mADOCGIA;
    private int tIENTHU;
+   private Date nGAYTHU;
    
    public HoaDon(){
        
    }
-   public HoaDon(int mAHOADON,int mADOCGIA,int tIENTHU){
+   public HoaDon(int mAHOADON,int mADOCGIA,int tIENTHU, Date nGAYTHU ){
        this.mAHOADON=mAHOADON;
        this.mADOCGIA=mADOCGIA;
        this.tIENTHU=tIENTHU;
+       this.nGAYTHU=nGAYTHU;
    }
    public int getmAHOADON(){
        return mAHOADON;
@@ -45,4 +47,11 @@ public class HoaDon  {
    public void settIENTHU(int tIENTHU){
        this.tIENTHU=tIENTHU;
    }
+   public Date getnGAYTHU(){
+       return nGAYTHU;
+   }
+   public void setnGAYTHU(Date nGAYTHU){
+       this.nGAYTHU=nGAYTHU;
+   }
 }
+
