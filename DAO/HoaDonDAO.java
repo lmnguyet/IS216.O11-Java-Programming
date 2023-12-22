@@ -15,7 +15,7 @@ import Objects.HoaDon;
 import java.util.ArrayList;
 
 
-public class HoaDonDAO {
+public class HoaDonDao {
 
     public static Connection conn = Connect.getConnect();
     public static List<Integer> getlistmADOCGIA(){
@@ -36,10 +36,11 @@ public class HoaDonDAO {
     }
 
     public static void ThemHoaDon(HoaDon hd) {
-        String sql="{call THEMHOADON(?, ?)}";
+        String sql="{call THEMHOADON(?,?,?)}";
         try (CallableStatement stmt = conn.prepareCall(sql);) {
                 stmt.setInt(1,hd.getmADOCGIA());
-                stmt.setInt(2, hd.gettIENTHU());
+                stmt.setInt(3, hd.gettIENTHU());
+                stmt.setDate(2, hd.getnGAYTHU());
                 stmt.execute();
             } catch (SQLException e) {
                 throw new ArithmeticException(e.getMessage());
@@ -73,6 +74,7 @@ public class HoaDonDAO {
                  A.setmAHOADON(rs.getInt("MAHD"));
                  A.setmADOCGIA(rs.getInt("MADOCGIA"));
                  A.settIENTHU(rs.getInt("TIENTHU"));
+                 A.setnGAYTHU(rs.getDate("NGHOADON"));
                  list.add(A);
                  
              }   
